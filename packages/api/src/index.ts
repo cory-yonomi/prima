@@ -1,6 +1,10 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, Handler } from "express";
 
 export const app = express();
+
+import auth from "./routes/auth";
+
+app.use(auth);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello!");

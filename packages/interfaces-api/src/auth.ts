@@ -1,26 +1,22 @@
-export interface KeySchema {
-    hk: string;
-    sk: string;
+import { Role } from "./role";
+import { Tenant } from "./tenant";
+import { User } from "./user";
+
+export interface TenantCreateFunction {
+    input: {
+        displayName: string;
+        administrator: string | User;
+        roles: string[];
+    };
+    output: Tenant;
 }
 
-export interface Meta {
-    createdAt: string;
-    updatedAt: string;
-}
-
-export interface User {
-    displayName: string;
-    email: string;
-    hashedPassword: string;
-    roles: string[];
-}
-
-export interface UserItem extends User {
-    key: KeySchema;
-    meta: Meta;
-}
-
-export interface UserLoginRequest {
-    email: string;
-    hashedPassword: string;
+export interface TenantLoginFunction {
+    input: {
+        credentials: {
+            tenantName: string;
+            hashedPassword: string;
+        };
+    };
+    output: Tenant;
 }
