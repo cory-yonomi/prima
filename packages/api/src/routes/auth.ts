@@ -26,6 +26,9 @@ router.post("/signup", (req, res, next) => {
                 displayName: req.body.displayName,
                 administrator: createdUser,
             };
+        })
+        .then(() => {
+            res.sendStatus(200);
         });
 });
 
