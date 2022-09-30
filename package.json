@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@types/supertest": "^2.0.12",
     "lerna": "^5.5.1",
+    "supertest": "^6.2.4",
     "ts-node-dev": "^2.0.0"
   },
   "dependencies": {
