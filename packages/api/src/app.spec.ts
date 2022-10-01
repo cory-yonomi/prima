@@ -14,7 +14,7 @@ const createTenantInput = {
 const fakeUser = {
     displayName: "John Doe",
     email: "email@email.com",
-    hashedPassword: expect.any("string"),
+    hashedPassword: "password",
     roles: ["admin"],
 };
 
