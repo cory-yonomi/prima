@@ -1,6 +1,7 @@
 import express, { Request, Response, Handler } from "express";
 import { ApolloServer, gql } from "apollo-server";
 import { schema } from "./schema/schema";
+import logger from "../lib/requestLogger";
 
 const app = express();
 
@@ -8,6 +9,7 @@ import auth from "./routes/auth";
 import { GraphQLSchema } from "graphql";
 
 app.use(express.json());
+app.use(logger);
 app.use(auth);
 
 const server = new ApolloServer({
